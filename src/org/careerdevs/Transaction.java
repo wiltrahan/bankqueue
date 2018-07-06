@@ -9,13 +9,19 @@ public class Transaction {
 		this.amount = amount;
 	}
 	
-	public double deposit(BankAccount account, double amount) {
-		balance += amount;
+	public static double deposit(BankAccount account, double amount) {
+		
+		double balance = CheckingAccount.getBalance() + amount;
+		
+		//balance += amount;
 		return balance;
 	}
 	
-	public double withdraw(BankAccount account, double amount) {
-		balance -= amount;
+	public static double withdraw(BankAccount account, double amount) {
+		
+		double balance = CheckingAccount.getBalance() - amount;
+		
+		//balance -= amount;
 		return balance;
 	}
 }
